@@ -66,7 +66,7 @@ rots.res<- ROTS(data.for.rots, groups=groups, B=1000,  K = nrow(data.for.rots)/4
 rots.res.df=data.frame(d=rots.res$d, logfc=rots.res$logfc, pvalue=rots.res$pvalue, fdr=rots.res$FDR)
 rots.res.df=rots.res.df[order(as.numeric(rots.res.df$pvalue)),]
 
-write.xlsx(rots.res.df, file = "BvsM_Paired_Analyses/All_GenesTestingForGIT2.xlsx", sheetName = "1", rowNames=TRUE)
+write.xlsx(rots.res.df, file = "BvsM_Paired_Analyses/All_Genes.xlsx", sheetName = "1", rowNames=TRUE)
 
 save.image("BvsM_Paired_Analyses/1_PreProcessing_Done_ROTS_DE_Done.RData")
 
@@ -118,6 +118,6 @@ rots.res<- ROTS(data.test, groups=groups, B=1000,  K = nrow(data.log.ratio)/4, s
 
 rots.res.df=data.frame(d=rots.res$d, logfc=rots.res$logfc, pvalue=rots.res$pvalue, fdr=rots.res$FDR)
 rots.res.df=rots.res.df[order(as.numeric(rots.res.df$pvalue)),]
-write.xlsx(rots.res.df, file = "BCR/data.log.ratio_All_Genestest.xlsx", sheetName = "1", rowNames=TRUE)
+write.xlsx(rots.res.df, file = "BCR/data.log.ratio_All_Genes.xlsx", sheetName = "1", rowNames=TRUE)
 
 save.image("./BCR/2_Ratio_Data_BCR_Groups_DE_ROTS.RData")
